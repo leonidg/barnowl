@@ -10,6 +10,7 @@ sub toggle {
     my $varname = shift;
     my $var = BarnOwl::getvar($varname);
     if (!$var) {
+        BarnOwl::error("$varname not found");
         return;
     }
     if ($var eq 'on') {
